@@ -8,9 +8,15 @@ namespace double_linked_list
 {
     class node
     {
+        /*Node class represent the node of doubly linked list.
+         * it consist of the information part and links to
+         * its succeding and precceding
+         * in terms of the next*/
         public int noMhs;
         public string name;
+        //point to succeding
         public node next;
+        //point to precceding
         public node prev;
 
     }
@@ -26,7 +32,7 @@ namespace double_linked_list
             int nim;
             string nm;
             Console.Write("\nEnter the roll number of the student: ");
-            nim = Convert.ToInt32(System.Console.ReadLine());
+            nim = Convert.ToInt32(Console.ReadLine());
             Console.Write("\nEnter the name of the student: ");
             nm = Console.ReadLine();
             node newNode = new node();
@@ -46,6 +52,26 @@ namespace double_linked_list
                 START = newNode;
                 return;
             }
+            node previous, current;
+            for (current = previous =START; current != null && nim >= current.noMhs; previous = current, current = current.next)
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("\nDuplicate roll numbers not allowed");
+                    return ;
+                }
+            }
+            newNode.next = current;
+            newNode.prev = previous;
+
+            if (current == null)
+            {
+                newNode.next = null;
+                previous.next = newNode;
+                return ;
+            }
+            current.prev = newNode;
+            previous.next = newNode;
 
         }
 
