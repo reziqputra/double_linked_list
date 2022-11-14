@@ -25,6 +25,27 @@ namespace double_linked_list
         {
             int nim;
             string nm;
+            Console.Write("\nEnter the roll number of the student: ");
+            nim = Convert.ToInt32(System.Console.ReadLine());
+            Console.Write("\nEnter the name of the student: ");
+            nm = Console.ReadLine();
+            node newNode = new node();
+            newNode.noMhs = nim;
+            newNode.name = nm;
+
+            if (START == null || nim <= START.noMhs)
+            {
+                if ((START != null) && (nim == START.noMhs))
+                {
+                    Console.WriteLine("\nDuplicate number not allowed");
+                    return;
+                }
+                newNode.next = START;
+                if (START != null)
+                    START.prev = null;
+                START = newNode;
+                return;
+            }
 
         }
 
