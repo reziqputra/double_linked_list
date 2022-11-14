@@ -8,6 +8,6 @@ namespace double_linked_list
 {
     class node
     {
-
+        public int noMhs;
     }
 }
