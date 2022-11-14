@@ -17,5 +17,10 @@ namespace double_linked_list
     class DoubleLinkedList
     {
         node START;
+        public DoubleLinkedList()
+        {
+            START = null;
+        }
+
     }
 }
