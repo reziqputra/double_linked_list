@@ -21,6 +21,12 @@ namespace double_linked_list
         {
             START = null;
         }
+        public void addnode()
+        {
+            int nim;
+            string nm;
+
+        }
 
     }
 }
